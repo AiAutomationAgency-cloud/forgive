@@ -109,6 +109,7 @@ const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState('main');
   const [showBananaRain, setShowBananaRain] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
 
   // Rotate apology messages
   useEffect(() => {
@@ -118,35 +119,66 @@ const App: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Initialize audio context on first interaction
+  const initAudioContext = async () => {
+    if (!audioContext) {
+      try {
+        const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+        if (ctx.state === 'suspended') {
+          await ctx.resume();
+        }
+        setAudioContext(ctx);
+        return ctx;
+      } catch (error) {
+        console.log('Audio not supported:', error);
+        return null;
+      }
+    }
+    return audioContext;
+  };
+
   // Play monkey sound
-  const playMonkeySound = () => {
+  const playMonkeySound = async () => {
     if (!soundEnabled) return;
     
     try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
+      const ctx = await initAudioContext();
+      if (!ctx) return;
+
+      // Create "ooh ooh ah ah" monkey sound
+      const playTone = (frequency: number, startTime: number, duration: number, volume = 0.2) => {
+        const oscillator = ctx.createOscillator();
+        const gainNode = ctx.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(ctx.destination);
+        
+        oscillator.frequency.setValueAtTime(frequency, startTime);
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0, startTime);
+        gainNode.gain.linearRampToValueAtTime(volume, startTime + 0.01);
+        gainNode.gain.linearRampToValueAtTime(0, startTime + duration - 0.01);
+        
+        oscillator.start(startTime);
+        oscillator.stop(startTime + duration);
+      };
+
+      const currentTime = ctx.currentTime;
+      // "Ooh ooh ah ah" pattern
+      playTone(400, currentTime, 0.15, 0.3); // ooh
+      playTone(450, currentTime + 0.2, 0.15, 0.3); // ooh
+      playTone(350, currentTime + 0.4, 0.2, 0.25); // ah
+      playTone(380, currentTime + 0.65, 0.2, 0.25); // ah
       
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-      
-      oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-      oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
-      oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.2);
-      
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-      
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 0.3);
     } catch (error) {
-      console.log('Audio not supported');
+      console.log('Audio playback failed:', error);
     }
   };
 
-  const handleMonkeyClick = () => {
+  const handleMonkeyClick = async () => {
     setIsMonkeyClicked(true);
-    playMonkeySound();
+    await playMonkeySound();
     setTimeout(() => setIsMonkeyClicked(false), 600);
     
     if (forgivenessLevel < 90) {
