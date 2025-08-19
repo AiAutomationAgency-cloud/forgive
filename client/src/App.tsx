@@ -451,12 +451,12 @@ Forgiveness Level: ${forgivenessLevel}%
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
-            { title: '🏠 Indoor Adventure Planning', desc: 'I\'ll plan the most amazing indoor activities - movie marathons, board game tournaments, cooking challenges!' },
-            { title: '🍕 Food Delivery Champion', desc: 'I promise to become the ultimate food delivery app master. No outdoor trips for snacks!' },
-            { title: '🎬 Netflix Curator', desc: 'I\'ll create the perfect watchlists for all your favorite genres and moods.' },
-            { title: '🛍️ Online Shopping Assistant', desc: 'Need something? I\'ll help you find it online so you never have to leave home!' },
-            { title: '🎮 Gaming Buddy', desc: 'Let\'s conquer virtual worlds instead of the actual outdoors!' },
-            { title: '☕ Cozy Café Creator', desc: 'I\'ll help transform your homes into the coziest cafés ever!' }
+            { title: '🥺👶 Crying Baby Apology Mode', desc: '*sends 47 crying baby GIFs* Pwease forgive me! I promise to never mess up again... until next Tuesday! 😭✨' },
+            { title: '🐵🙏 Monkey Begging Specialist', desc: '🐒 *dramatically falls to knees with folded hands* "Maaf kardo yaar!" - Your personal guilt-trip monkey! 🙈💔' },
+            { title: '🎬💥 BOLLYWOOD SORRY POSTER', desc: 'Picture this: ME on a movie poster crying in the rain with "MAAF KARO MUJHE" in glittery letters! Oscar-worthy apology! 🌧️🎭✨' },
+            { title: '🍕💰 Pizza Bribery Expert', desc: 'Will literally order 12 pizzas and write "SORRY" in pepperoni! Your anger cannot survive cheesy goodness! 🧀😍' },
+            { title: '🐶👀 Professional Puppy Eyes', desc: '*activates maximum cute mode* I\'ve been practicing my puppy dog face in the mirror for 3 hours. Resistance is futile! 🥺🐕💕' },
+            { title: '🤡📢 Dramatic Apology Theater', desc: 'Will hire a mariachi band to follow you around playing sad songs until you forgive me! Complete with confetti cannons! 🎺🎉😂' }
           ].map((idea, index) => (
             <motion.div
               key={index}
