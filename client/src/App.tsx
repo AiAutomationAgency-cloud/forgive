@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Heart, Download, Volume2, VolumeX } from 'lucide-react';
+import puppyImage from './assets/images/Cute_puppy_big_eyes_fc38512a.png';
+import kittenImage from './assets/images/Cute_kitten_big_eyes_5202df7e.png';
 
 const apologyMessages = [
   "I'm sorry for being a monkey who forgot how much you hate going outside! 🐒",
@@ -222,7 +224,7 @@ Forgiveness Level: ${forgivenessLevel}%
 
   const MainSection = () => (
     <motion.div 
-      className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-400"
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -458,7 +460,7 @@ Forgiveness Level: ${forgivenessLevel}%
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <img 
-              src="/attached_assets/generated_images/Cute_puppy_big_eyes_fc38512a.png" 
+              src={puppyImage} 
               alt="Adorable puppy with big eyes"
               className="w-64 h-64 mx-auto rounded-xl object-cover mb-4"
             />
@@ -473,7 +475,7 @@ Forgiveness Level: ${forgivenessLevel}%
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <img 
-              src="/attached_assets/generated_images/Cute_kitten_big_eyes_5202df7e.png" 
+              src={kittenImage} 
               alt="Adorable kitten with big eyes"
               className="w-64 h-64 mx-auto rounded-xl object-cover mb-4"
             />
