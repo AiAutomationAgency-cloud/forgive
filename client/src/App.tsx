@@ -449,47 +449,37 @@ Forgiveness Level: ${forgivenessLevel}%
           </motion.button>
         </motion.header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {[
-            { title: '🥺👶 Crying Baby Apology Mode', desc: '*sends 47 crying baby GIFs* Pwease forgive me! I promise to never mess up again... until next Tuesday! 😭✨' },
-            { title: '🐵🙏 Monkey Begging Specialist', desc: '🐒 *dramatically falls to knees with folded hands* "Maaf kardo yaar!" - Your personal guilt-trip monkey! 🙈💔' },
-            { title: '🎬💥 BOLLYWOOD SORRY POSTER', desc: 'Picture this: ME on a movie poster crying in the rain with "MAAF KARO MUJHE" in glittery letters! Oscar-worthy apology! 🌧️🎭✨' },
-            { title: '🍕💰 Pizza Bribery Expert', desc: 'Will literally order 12 pizzas and write "SORRY" in pepperoni! Your anger cannot survive cheesy goodness! 🧀😍' },
-            { title: '🐶👀 Professional Puppy Eyes', desc: '*activates maximum cute mode* I\'ve been practicing my puppy dog face in the mirror for 3 hours. Resistance is futile! 🥺🐕💕' },
-            { title: '🤡📢 Dramatic Apology Theater', desc: 'Will hire a mariachi band to follow you around playing sad songs until you forgive me! Complete with confetti cannons! 🎺🎉😂' }
-          ].map((idea, index) => (
-            <motion.div
-              key={index}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-            >
-              <h3 className="text-xl font-bold text-gray-800 mb-3">{idea.title}</h3>
-              <p className="text-gray-600">{idea.desc}</p>
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <motion.div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            whileHover={{ scale: 1.02, y: -5 }}
+          >
+            <img 
+              src="/attached_assets/generated_images/Cute_puppy_big_eyes_fc38512a.png" 
+              alt="Adorable puppy with big eyes"
+              className="w-64 h-64 mx-auto rounded-xl object-cover mb-4"
+            />
+            <h3 className="text-2xl font-bold text-gray-800">🐶 Puppy Apology Eyes</h3>
+          </motion.div>
+          
+          <motion.div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            whileHover={{ scale: 1.02, y: -5 }}
+          >
+            <img 
+              src="/attached_assets/generated_images/Cute_kitten_big_eyes_5202df7e.png" 
+              alt="Adorable kitten with big eyes"
+              className="w-64 h-64 mx-auto rounded-xl object-cover mb-4"
+            />
+            <h3 className="text-2xl font-bold text-gray-800">🐱 Kitten Forgive-Me Face</h3>
+          </motion.div>
         </div>
-
-        <motion.div 
-          className="mt-16 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl mx-auto text-center"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
-            The Indoor Friends Manifesto 📜
-          </h2>
-          <div className="text-left space-y-4 text-gray-700 max-w-2xl mx-auto">
-            <p>• Indoor friends are the best friends</p>
-            <p>• Comfort zones are called comfort zones for a reason</p>
-            <p>• The outside world is overrated anyway</p>
-            <p>• Home is where the heart (and WiFi) is</p>
-            <p>• Social distancing? We were ahead of the curve!</p>
-            <p>• Why touch grass when you can touch keyboards?</p>
-          </div>
-        </motion.div>
       </div>
     </motion.div>
   );
