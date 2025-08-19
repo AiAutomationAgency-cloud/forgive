@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 import { Heart, Download, Volume2, VolumeX } from 'lucide-react';
 import puppyImage from './assets/images/Cute_puppy_big_eyes_fc38512a.png';
 import kittenImage from './assets/images/Super_cute_kitten_big_eyes_e78f7189.png';
+import babyImage from './assets/images/Adorable_cute_baby_big_eyes_28d97852.png';
 
 const apologyMessages = [
   "I'm sorry for being a monkey who forgot how much you hate going outside! 🐒",
@@ -451,9 +452,19 @@ Forgiveness Level: ${forgivenessLevel}%
           </motion.button>
         </motion.header>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <motion.div 
+          className="text-center mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <h2 className="text-3xl font-bold text-white mb-2">For Aprajita, Roshni & Sakshi 💕</h2>
+          <p className="text-white/80 text-lg">Please forgive me with these irresistible eyes!</p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <motion.div
-            className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -462,13 +473,14 @@ Forgiveness Level: ${forgivenessLevel}%
             <img 
               src={puppyImage} 
               alt="Adorable puppy with big eyes"
-              className="w-64 h-64 mx-auto rounded-xl object-cover mb-4"
+              className="w-48 h-48 mx-auto rounded-xl object-cover mb-3"
             />
-            <h3 className="text-2xl font-bold text-gray-800">🐶 Puppy Apology Eyes</h3>
+            <h3 className="text-xl font-bold text-gray-800">🐶 Puppy Eyes</h3>
+            <p className="text-sm text-gray-600 mt-1">For Aprajita</p>
           </motion.div>
           
           <motion.div
-            className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -477,9 +489,26 @@ Forgiveness Level: ${forgivenessLevel}%
             <img 
               src={kittenImage} 
               alt="Adorable kitten with big eyes"
-              className="w-64 h-64 mx-auto rounded-xl object-cover mb-4"
+              className="w-48 h-48 mx-auto rounded-xl object-cover mb-3"
             />
-            <h3 className="text-2xl font-bold text-gray-800">🐱 Ultra Cute Kitten Eyes</h3>
+            <h3 className="text-xl font-bold text-gray-800">🐱 Kitten Eyes</h3>
+            <p className="text-sm text-gray-600 mt-1">For Roshni</p>
+          </motion.div>
+
+          <motion.div
+            className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            whileHover={{ scale: 1.02, y: -5 }}
+          >
+            <img 
+              src={babyImage} 
+              alt="Adorable baby with big eyes"
+              className="w-48 h-48 mx-auto rounded-xl object-cover mb-3"
+            />
+            <h3 className="text-xl font-bold text-gray-800">👶 Baby Eyes</h3>
+            <p className="text-sm text-gray-600 mt-1">For Sakshi</p>
           </motion.div>
         </div>
       </div>
