@@ -5,6 +5,7 @@ import { Heart, Download, Volume2, VolumeX } from 'lucide-react';
 import puppyImage from './assets/images/Cute_puppy_big_eyes_fc38512a.png';
 import kittenImage from './assets/images/Super_cute_kitten_big_eyes_e78f7189.png';
 import babyImage from './assets/images/Super_cute_baby_huge_eyes_c7208018.png';
+import catInBootsImage from './assets/images/Cute_cat_in_boots_big_eyes_28e6ffe5.png';
 
 const apologyMessages = [
   "I'm sorry for being a monkey who forgot how much you hate going outside! 🐒",
@@ -346,13 +347,19 @@ Forgiveness Level: ${forgivenessLevel}%
             {/* Apology Meter */}
             <ApologyMeter level={forgivenessLevel} />
 
-            {/* Forgive Button */}
+            {/* Forgive Button with Cat */}
             <motion.div 
-              className="text-center"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
+              <motion.img 
+                src={catInBootsImage} 
+                alt="Cute cat in boots with big eyes"
+                className="w-32 h-32 mx-auto rounded-xl object-cover mb-4"
+                whileHover={{ scale: 1.1 }}
+              />
               <motion.button
                 onClick={handleForgiveClick}
                 className="bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold text-xl px-8 py-4 rounded-full shadow-lg hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105"
