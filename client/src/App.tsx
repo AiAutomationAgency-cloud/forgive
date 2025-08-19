@@ -4,7 +4,7 @@ import confetti from 'canvas-confetti';
 import { Heart, Download, Volume2, VolumeX } from 'lucide-react';
 import puppyImage from './assets/images/Cute_puppy_big_eyes_fc38512a.png';
 import kittenImage from './assets/images/Super_cute_kitten_big_eyes_e78f7189.png';
-import babyImage from './assets/images/Adorable_cute_baby_big_eyes_28d97852.png';
+import babyImage from './assets/images/Super_cute_baby_huge_eyes_c7208018.png';
 
 const apologyMessages = [
   "I'm sorry for being a monkey who forgot how much you hate going outside! 🐒",
@@ -452,16 +452,6 @@ Forgiveness Level: ${forgivenessLevel}%
           </motion.button>
         </motion.header>
 
-        <motion.div 
-          className="text-center mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
-          <h2 className="text-3xl font-bold text-white mb-2">For Aprajita, Roshni & Sakshi 💕</h2>
-          <p className="text-white/80 text-lg">Please forgive me with these irresistible eyes!</p>
-        </motion.div>
-
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <motion.div
             className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center"
@@ -476,7 +466,7 @@ Forgiveness Level: ${forgivenessLevel}%
               className="w-48 h-48 mx-auto rounded-xl object-cover mb-3"
             />
             <h3 className="text-xl font-bold text-gray-800">🐶 Puppy Eyes</h3>
-            <p className="text-sm text-gray-600 mt-1">For Aprajita</p>
+            <p className="text-lg font-medium text-gray-700 mt-2">Aprajita</p>
           </motion.div>
           
           <motion.div
@@ -492,7 +482,7 @@ Forgiveness Level: ${forgivenessLevel}%
               className="w-48 h-48 mx-auto rounded-xl object-cover mb-3"
             />
             <h3 className="text-xl font-bold text-gray-800">🐱 Kitten Eyes</h3>
-            <p className="text-sm text-gray-600 mt-1">For Roshni</p>
+            <p className="text-lg font-medium text-gray-700 mt-2">Roshni</p>
           </motion.div>
 
           <motion.div
@@ -508,7 +498,7 @@ Forgiveness Level: ${forgivenessLevel}%
               className="w-48 h-48 mx-auto rounded-xl object-cover mb-3"
             />
             <h3 className="text-xl font-bold text-gray-800">👶 Baby Eyes</h3>
-            <p className="text-sm text-gray-600 mt-1">For Sakshi</p>
+            <p className="text-lg font-medium text-gray-700 mt-2">Sakshi</p>
           </motion.div>
         </div>
       </div>
