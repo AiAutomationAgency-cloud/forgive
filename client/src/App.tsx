@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Heart, Download, Volume2, VolumeX } from 'lucide-react';
 import puppyImage from './assets/images/Cute_puppy_big_eyes_fc38512a.png';
-import kittenImage from './assets/images/Cute_kitten_big_eyes_5202df7e.png';
+import kittenImage from './assets/images/Super_cute_kitten_big_eyes_e78f7189.png';
 
 const apologyMessages = [
   "I'm sorry for being a monkey who forgot how much you hate going outside! 🐒",
@@ -479,7 +479,7 @@ Forgiveness Level: ${forgivenessLevel}%
               alt="Adorable kitten with big eyes"
               className="w-64 h-64 mx-auto rounded-xl object-cover mb-4"
             />
-            <h3 className="text-2xl font-bold text-gray-800">🐱 Kitten Forgive-Me Face</h3>
+            <h3 className="text-2xl font-bold text-gray-800">🐱 Ultra Cute Kitten Eyes</h3>
           </motion.div>
         </div>
       </div>
